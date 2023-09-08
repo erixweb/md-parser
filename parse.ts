@@ -16,7 +16,7 @@ export const parse = (content: string): string => {
             }
             parsed += `<h${hashtags}>${contentArray[i].substring(contentArray[i].indexOf(" ") + 1)}</h${hashtags}>\n`
         } else if (contentArray[i].startsWith(">")) {
-            // todo
+            parsed += `<blockquote style="padding: 24px 40px;margin: 0;"><p>${contentArray[i].substring(contentArray[i].indexOf(" ") + 1)}</p></blockquote>\n`
         } else if (contentArray[i].length > 0) {
             parsed += `<p>${contentArray[i]}</p>\n`
         }
